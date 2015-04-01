@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Teagan Atwater and Jules Tamagnan" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="js/flexie.js"></script>
+    <!-- Remove for real map -->
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="js/scripts.js"></script>
+    <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+    <title>Road Weather</title>
+  </head>
+  <body>
+    <div id="map"></div>
+    <aside class="sidebar">
+      <div class="logo">Road<strong>Weather</strong></div>
+      <form class="map-controls">
+        <input placeholder="Start location" type="text" />
+        <input placeholder="End location" type="text" />
+        <input placeholder="Date" type="date" />
+        <input placeholder="Time" type="time" />
+        <input type="Submit" value="Get Forecast" />
+      </form>
+      <div class="directions">
+        Directions here
+      </div>
+    </aside>
+  </body>
+</html>
