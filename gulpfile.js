@@ -66,10 +66,10 @@ gulp.task('browser-sync', ['minify-html', 'sass', 'uglify'], function() {
  */
 gulp.task('minify-html', function() {
   return gulp.src(config.htmlFiles)
-    .pipe(htmlmin({collapseWhitespace: true}))
-    .on('error', function (err) {
-      browserSync.notify(err);
-    })
+    // .pipe(htmlmin({collapseWhitespace: true}))
+    // .on('error', function (err) {
+    //   browserSync.notify(err);
+    // })
     .pipe(gulp.dest(config.publicFiles))
     // for live injecting
     .pipe(browserSync.reload({stream: true}));

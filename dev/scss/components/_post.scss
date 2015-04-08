@@ -1,0 +1,30 @@
+.post {
+  border-style: solid;
+  border-width: 0 163px 163px 163px;
+  display: inline-block;
+  height: 0;
+  margin-right: -163px;
+  position: relative;
+    left: -163px;
+  width: 0;
+
+  &:nth-of-type(4n+1) {
+    border-color: #55c7f0 transparent;
+  }
+  &:nth-of-type(4n+2) {
+    border-color: #c6dd2a transparent;
+  }
+  &:nth-of-type(4n+3) {
+    border-color: #f64fc2 transparent;
+  }
+  &:nth-of-type(4n+4) {
+    border-color: #fcaf09 transparent;
+  }
+
+  &:nth-of-type(odd) {
+    border-width: 0 163px 163px 163px;
+  }
+  &:nth-of-type(even) {
+    border-width: 163px 163px 0 163px;
+  }
+}
