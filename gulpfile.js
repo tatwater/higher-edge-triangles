@@ -26,7 +26,7 @@ var config = {
   // the js files
   jsFiles: 'dev/js/**/*.js',
   // the image files
-  imgFiles: 'dev/img/**/*',
+  imgFiles: 'dev/img/**/*.jpg',
   // the public site files
   publicFiles: 'dist/',
   // the destination directory for our css

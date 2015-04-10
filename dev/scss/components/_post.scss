@@ -1,10 +1,13 @@
 .post {
+  border: 1px solid #ccc;
   display: inline-block;
+  margin: 0 10px;
+  text-align: left;
   vertical-align: top;
-  width: 33.33333%;
 
   header {
-    height: 200px;
+    height: 150px;
+    margin-bottom: 20px;
     position: relative;
 
     .background {
@@ -33,6 +36,7 @@
           margin: auto;
           min-width: 50%;
           min-height: 50%;
+          width: 100%;
         }
       }
 
@@ -50,6 +54,56 @@
           background: rgba(44,44,44, .9);
         }
       }
+    }
+    .college {
+      border-bottom: 150px solid #fff;
+      border-left: 150px solid transparent;
+      height: 0;
+      position: absolute;
+        right: 0;
+        bottom: 0;
+      width: 0;
+
+      img {
+        max-height: 80px;
+        max-width: 80px;
+        position: relative;
+          top: 85px;
+          left: -90px;
+      }
+    }
+  }
+  h3 {
+    color: #444;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2px;
+    padding: 0 10px;
+  }
+  h4 {
+    color: #aaa;
+    font-size: 14px;
+    padding: 0 10px;
+    text-transform: uppercase;
+  }
+  p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4em;
+    padding: 20px 10px;
+  }
+  button {
+    background: rgba(0, 0, 0, .05);
+    border-top: 1px solid rgba(0, 0, 0, .1);
+    border: none;
+    font-size: 1rem;
+    outline: none;
+    padding: 10px;
+    transition: background .2s ease;
+    width: 100%;
+
+    &:hover {
+      background: rgba(0, 0, 0, .08);
     }
   }
 }
