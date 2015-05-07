@@ -28,7 +28,7 @@
     "type": "git",
     "url": "git://bitbucket.org/tatwater/road-weather.git"
   },
-  "author": "Teagan Atwater and Jules Tamagnan",
+  "author": "Teagan Atwater",
   "license": "ISC",
   "bugs": {
     "url": "https://bitbucket.org/tatwater/road-weather/issues"
