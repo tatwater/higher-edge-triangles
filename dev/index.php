@@ -12,9 +12,29 @@
     <title>Profiles</title>
   </head>
   <body>
+    <ul class="triangle-corner">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
     <section class="">
       <div class="content">
-        Hi.
+        <p>Hi.</p>
       </div>
     </section>
   </body>

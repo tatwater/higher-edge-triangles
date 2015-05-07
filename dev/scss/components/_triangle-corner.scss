@@ -1,0 +1,122 @@
+$triangle-size: 80px;
+
+.triangle-corner {
+  li {
+    border-color: transparent;
+    border-style: solid;
+    border-width: 0;
+    display: block;
+  	height: 0;
+    position: absolute;
+    width: 0;
+    
+    &:nth-of-type(1) {
+    	border-top-color: $purple-light;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: 0;
+    }
+    &:nth-of-type(2) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 0;
+      left: 0;
+    }
+    &:nth-of-type(3) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: $triangle-size;
+    }
+    &:nth-of-type(4) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: 2 * $triangle-size;
+    }
+    &:nth-of-type(5) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 0;
+      left: 2 * $triangle-size;
+    }
+    &:nth-of-type(6) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: 3 * $triangle-size;
+    }
+    &:nth-of-type(7) {
+    	border-top-color: $purple-light;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: 4 * $triangle-size;
+    }
+    &:nth-of-type(8) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 0;
+      left: 4 * $triangle-size;
+    }
+    &:nth-of-type(9) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 0;
+      left: 5 * $triangle-size;
+    }
+    &:nth-of-type(10) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: $triangle-size;
+      left: 0;
+    }
+    &:nth-of-type(11) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: $triangle-size;
+      left: 0;
+    }
+    &:nth-of-type(12) {
+    	border-top-color: $purple-light;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: $triangle-size;
+      left: $triangle-size;
+    }
+    &:nth-of-type(13) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: $triangle-size;
+      left: $triangle-size;
+    }
+    &:nth-of-type(14) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: $triangle-size;
+      left: 2 * $triangle-size;
+    }
+    &:nth-of-type(15) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: $triangle-size;
+      left: 3 * $triangle-size;
+    }
+    &:nth-of-type(16) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 2 * $triangle-size;
+      left: 0;
+    }
+    &:nth-of-type(17) {
+    	border-bottom-color: $purple-dark;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 2 * $triangle-size;
+      left: $triangle-size;
+    }
+    &:nth-of-type(18) {
+    	border-top-color: $purple;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 3 * $triangle-size;
+      left: 0;
+    }
+  }
+}

@@ -20,7 +20,7 @@ var gulp           = require('gulp'),
 
 var config = {
   // the html files
-  htmlFiles: 'dev/**/*.html',
+  htmlFiles: ['dev/**/*.html', 'dev/**/*.php'],
   // the scss files
   scssFiles: 'dev/scss/**/*.scss',
   // the js files
@@ -47,14 +47,14 @@ var config = {
  * Reload the browser
  */
 gulp.task('browser-sync', ['minify-html', 'sass', 'uglify'], function() {
-  browserSync({
-    server: {
-      baseDir: config.publicFiles
-    },
-    xip: true
-    // Disables clicks, location, forms, scroll
-    // ghostMode: false
-  });
+//  browserSync({
+//    server: {
+//      baseDir: config.publicFiles
+//    },
+//    xip: true
+//    // Disables clicks, location, forms, scroll
+//    // ghostMode: false
+//  });
 });
 
 // --------------------------------------------------
