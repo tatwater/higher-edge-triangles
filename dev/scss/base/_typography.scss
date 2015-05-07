@@ -51,9 +51,18 @@
 
 html {
   color: #444;
-  font-size: 16px;
+  font-size: 18px;
 }
 
+h1 {
+  font-size: 3.5rem;
+}
 p {
   font-size: 1rem;
+  
+  &.subhead {
+    color: $blue;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
 }

@@ -32,10 +32,12 @@
       <li></li>
       <li></li>
     </ul>
-    <section class="">
-      <div class="content">
-        <p>Hi.</p>
-      </div>
-    </section>
+    <div class="category-title">
+      <a href=""><span class="arrow up"></span></a>
+      <p class="subhead">my favorite class is</p>
+      <h1>History</h1>
+      <p>23 students</p>
+      <a href=""><span class="arrow down"></span></a>
+    </div>
   </body>
 </html>

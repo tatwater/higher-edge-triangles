@@ -1,0 +1,60 @@
+.category-title {
+  position: absolute;
+    bottom: 160px;
+    left: 160px;
+    
+  h1 {
+    margin: 0 0 1rem -3px;
+  }
+  .arrow {
+    border-color: $purple-dark transparent;
+    border-style: solid;
+    border-width: 0;
+    display: block;
+  	height: 0;
+    position: relative;
+      top: 0;
+      left: 2px;
+    transition: border-color .2s ease;
+    width: 0;
+    
+    &.up {
+      border-width: 0 50px 40px 50px;
+      margin-bottom: 2rem;
+      
+      &:after {
+        border-bottom-color: #fff;
+        border-width: 0 48px 38px 48px;
+        top: 5px;
+        left: -48px;
+      }
+    }
+    &.down {
+      border-width: 40px 50px 0 50px;
+      margin-top: 2rem;
+      
+      &:after {
+        border-top-color: #fff;
+        border-width: 38px 48px 0 48px;
+        bottom: 5px;
+        left: -48px;
+      }
+    }
+    
+    &:after {
+      content: '';
+      border-color: transparent;
+      border-style: solid;
+      border-width: 0;
+      display: block;
+      height: 0;
+      position: absolute;
+      width: 0;
+    }
+    
+    &.up:hover,
+    &.down:hover {
+      border-color: $purple-light transparent;
+    }
+  }
+}
