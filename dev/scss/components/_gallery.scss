@@ -1,0 +1,14 @@
+.triangle {
+  border-color: transparent;
+  border-style: solid;
+  border-width: 0;
+  display: block;
+	height: 0;
+  position: absolute;
+    bottom: 160px;
+    left: 720px;
+  width: 0;
+  
+  	border-bottom-color: $blue;
+    border-width: 0 500px 500px 0;
+}

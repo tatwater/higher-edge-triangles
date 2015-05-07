@@ -39,5 +39,7 @@
       <p>23 students</p>
       <a href=""><span class="arrow down"></span></a>
     </div>
+    <div class="triangle">
+    </div>
   </body>
 </html>
