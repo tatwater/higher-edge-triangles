@@ -118,5 +118,36 @@ $triangle-size: 80px;
       top: 3 * $triangle-size;
       left: 0;
     }
+    
+    &:nth-of-type(19) {
+    	border-bottom-color: #fff;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 0;
+      left: $triangle-size;
+    }
+    &:nth-of-type(20) {
+    	border-bottom-color: #fff;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: 0;
+      left: 3 * $triangle-size;
+    }
+    &:nth-of-type(21) {
+    	border-bottom-color: #fff;
+      border-width: 0 0 $triangle-size $triangle-size;
+      top: $triangle-size;
+      left: 2 * $triangle-size;
+    }
+    &:nth-of-type(22) {
+    	border-top-color: #fff;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 2 * $triangle-size;
+      left: 0;
+    }
+    &:nth-of-type(23) {
+    	border-top-color: #fff;
+      border-width: $triangle-size $triangle-size 0 0;
+      top: 2 * $triangle-size;
+      left: $triangle-size;
+    }
   }
 }

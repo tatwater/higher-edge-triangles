@@ -50,7 +50,7 @@
 // // $roboto-slab-bold: "roboto_slabbold";
 
 html {
-  color: #444;
+  color: #fafafa;
   font-size: 18px;
 }
 
@@ -61,7 +61,7 @@ p {
   font-size: 1rem;
   
   &.subhead {
-    color: $blue;
+    color: $blue !important;
     font-size: 1.6rem;
     font-weight: bold;
   }

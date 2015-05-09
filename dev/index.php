@@ -31,15 +31,67 @@
       <li></li>
       <li></li>
       <li></li>
+      
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
     </ul>
-    <div class="category-title">
-      <a href=""><span class="arrow up"></span></a>
-      <p class="subhead">my favorite class is</p>
-      <h1>History</h1>
-      <p>23 students</p>
-      <a href=""><span class="arrow down"></span></a>
-    </div>
-    <div class="triangle">
-    </div>
+    <section class="content">
+      <div class="row two">
+        <div class="col">
+          <div class="category-title">
+            <a href=""><span class="arrow up"></span></a>
+            <p class="subhead">my favorite class is</p>
+            <h1>History</h1>
+            <p>23 students</p>
+            <a href=""><span class="arrow down"></span></a>
+          </div>
+        </div>
+        <div class="col">
+          <div class="triangle">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="info">
+      <div class="content">
+        <h1>History</h1>
+        <p>Here's a short description about History</p>
+        <div class="row three">
+          <div class="col">
+            <h3>Majors</h3>
+            <ul>
+              <li><a href="">Thing one</a></li>
+              <li><a href="">Thing two</a></li>
+              <li><a href="">Thing three</a></li>
+              <li><a href="">Thing four</a></li>
+              <li><a href="">Thing five</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Colleges</h3>
+            <ul>
+              <li><a href="">Thing one</a></li>
+              <li><a href="">Thing two</a></li>
+              <li><a href="">Thing three</a></li>
+              <li><a href="">Thing four</a></li>
+              <li><a href="">Thing five</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Careers</h3>
+            <ul>
+              <li><a href="">Thing one</a></li>
+              <li><a href="">Thing two</a></li>
+              <li><a href="">Thing three</a></li>
+              <li><a href="">Thing four</a></li>
+              <li><a href="">Thing five</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
   </body>
 </html>

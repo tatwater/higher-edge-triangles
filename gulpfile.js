@@ -155,7 +155,7 @@ gulp.task('watch', function() {
   gulp.watch(config.htmlFiles, ['minify-html']);
   gulp.watch(config.scssFiles, ['sass']);
   gulp.watch(config.jsFiles, ['uglify']);
-  // gulp.watch(config.imgFiles, ['imagemin']);
+   gulp.watch(config.imgFiles, ['imagemin']);
   browserSync.reload();
 });
 
