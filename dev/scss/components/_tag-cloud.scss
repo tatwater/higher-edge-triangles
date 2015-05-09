@@ -1,0 +1,19 @@
+.tag-cloud {
+  border-left: 1px solid #666;
+  font-size: 0;
+  line-height: 1rem;
+  margin-top: 3rem;
+  padding-left: 20px;
+  
+  span {
+    background: $green;
+    border-radius: .7rem;
+    color: #fafafa;
+    display: inline-block;
+    font-size: .8rem;
+    font-weight: bold;
+    line-height: 1rem;
+    margin-right: 5px;
+    padding: .1rem 10px;
+  }
+}

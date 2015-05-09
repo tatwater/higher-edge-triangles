@@ -7,6 +7,16 @@
   transition: left .4s ease;
   width: 95%;
   
+  .close {
+    background: rgba(0, 0, 0, .05);
+    border: none;
+    height: 80px;
+    outline: none;
+    position: absolute;
+      top: 0;
+      right: 0;
+    width: 80px;
+  }
   p.subhead {
     color: #ddd;
     margin: 0 0 1rem 2px;

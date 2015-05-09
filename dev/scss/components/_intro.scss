@@ -7,6 +7,35 @@
   transition: top .4s ease;
   width: 100%;
   
+  .close {
+    background: rgba(0, 0, 0, .05);
+    border: none;
+    height: 80px;
+    outline: none;
+    position: absolute;
+      top: 0;
+      right: 0;
+    width: 80px;
+  }
+  h2 {
+    margin: -1rem 0 1rem;
+  }
+  p {
+    color: #666;
+    margin-right: 20px;
+  }
+  
+  .toggle-zone {
+    background: none;
+    border: none;
+    cursor: default;
+    height: 5.3%;
+    outline: none;
+    position: absolute;
+      bottom: -5.3%;
+    width: 100%;
+  }
+  
   &.active {
     top: 0;
   }

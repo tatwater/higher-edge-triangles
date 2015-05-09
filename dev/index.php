@@ -59,6 +59,7 @@
       </div>
     </section>
     <section class="info">
+      <button class="close">X</button>
       <div class="content">
         <p class="subhead">my favorite class is</p>
         <h1>History</h1>
@@ -97,10 +98,58 @@
         </div>
       </div>
     </section>
-    <section class="intro">
+    <section class="intro active">
+      <button class="close" data-toggle="intro">X</button>
       <div class="content">
-        <h1>We're Design Public Practice.</h1>
+        <div class="row two">
+          <div class="col">
+            <h2>Project Polygon</h2>
+            <p>Project description paragraph here, stating purpose and connection to Conn. Project description paragraph here, stating purpose and connection to Conn. Project description paragraph here, stating purpose and connection to Conn.</p>
+            <a class="button" href="http://designpublicpractice.org/">Learn More &raquo;</a>
+          </div>
+          <div class="col">
+            <div class="tag-cloud">
+              <span>History</span>
+              <span>Dance</span>
+              <span>Engineering</span>
+              <span>Math</span>
+              <span>Politics</span>
+              <span>Computer Science</span>
+              <span>Design</span>
+              <span>Business</span>
+              <span>Medicine</span>
+              <span>History</span>
+              <span>Dance</span>
+              <span>Engineering</span>
+              <span>Math</span>
+              <span>Politics</span>
+              <span>Computer Science</span>
+              <span>Design</span>
+              <span>Business</span>
+              <span>Medicine</span>
+              <span>History</span>
+              <span>Dance</span>
+              <span>Engineering</span>
+              <span>Math</span>
+              <span>Politics</span>
+              <span>Computer Science</span>
+              <span>Design</span>
+              <span>Business</span>
+              <span>Medicine</span>
+              <span>History</span>
+              <span>Dance</span>
+              <span>Engineering</span>
+              <span>Math</span>
+              <span>Politics</span>
+              <span>Computer Science</span>
+              <span>Design</span>
+              <span>Business</span>
+              <span>Medicine</span>
+            </div>
+          </div>
+        </div>
       </div>
+      <button class="toggle-zone" data-toggle="intro"></button>
     </section>
   </body>
 </html>

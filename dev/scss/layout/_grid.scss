@@ -12,13 +12,17 @@ body {
 }
 .content {
   margin: 0 auto;
-  max-width: 980px;
-  padding: 20px 0;
+  max-width: 1000px;
+  padding: 0 20px;
   position: absolute;
     top: 50%;
     left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  
+  &.center {
+    text-align: center;
+  }
 }
 
 .row {
