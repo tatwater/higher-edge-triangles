@@ -11,7 +11,8 @@
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Project Polygon</title>
   </head>
-  <?php include "includes/load-page.php"; ?>
+  <?php include "includes/manage-db.php"; ?>
+  <?php include "includes/load-data.php"; ?>
   <body>
     <ul class="triangle-corner">
       <li></li>
@@ -50,6 +51,7 @@
             <p class="subhead">my favorite class is</p>
             <h1>History</h1>
             <p>23 students</p>
+            <p><?php echo $noticeText; ?></p>
             <a href=""><span class="arrow down"></span></a>
           </div>
         </div>
@@ -99,7 +101,7 @@
         </div>
       </div>
     </section>
-    <section class="intro active">
+    <section class="intro">
       <button class="close" data-toggle="intro">X</button>
       <div class="content">
         <div class="row two">
