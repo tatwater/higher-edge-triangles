@@ -9,7 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/scripts.js"></script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <title>Profiles</title>
+    <title>Project Polygon</title>
   </head>
   <body>
     <ul class="triangle-corner">
@@ -38,6 +38,9 @@
       <li></li>
       <li></li>
     </ul>
+    <div class="logo">
+      <a href="http://higheredgect.org/"><img src="img/logo.png" /></a>
+    </div>
     <section class="content">
       <div class="row two">
         <div class="col">
@@ -57,6 +60,7 @@
     </section>
     <section class="info">
       <div class="content">
+        <p class="subhead">my favorite class is</p>
         <h1>History</h1>
         <p>Here's a short description about History</p>
         <div class="row three">
@@ -91,6 +95,11 @@
             </ul>
           </div>
         </div>
+      </div>
+    </section>
+    <section class="intro">
+      <div class="content">
+        <h1>We're Design Public Practice.</h1>
       </div>
     </section>
   </body>

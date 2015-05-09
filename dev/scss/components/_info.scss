@@ -1,12 +1,16 @@
 .info {
   background: $green;
   position: absolute;
-    top: 0;
+    top: .5%;
     bottom: 0;
     left: 95%;
   transition: left .4s ease;
   width: 95%;
   
+  p.subhead {
+    color: #ddd;
+    margin: 0 0 1rem 2px;
+  }
   h1 {
     margin: -1rem 0 1rem;
   }

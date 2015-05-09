@@ -26,7 +26,7 @@ var config = {
   // the js files
   jsFiles: 'dev/js/**/*.js',
   // the image files
-  imgFiles: 'dev/img/**/*.jpg',
+  imgFiles: ['dev/img/**/*.jpg', 'dev/img/**/*.png'],
   // the public site files
   publicFiles: 'dist/',
   // the destination directory for our css
@@ -155,7 +155,7 @@ gulp.task('watch', function() {
   gulp.watch(config.htmlFiles, ['minify-html']);
   gulp.watch(config.scssFiles, ['sass']);
   gulp.watch(config.jsFiles, ['uglify']);
-   gulp.watch(config.imgFiles, ['imagemin']);
+  gulp.watch(config.imgFiles, ['imagemin']);
   browserSync.reload();
 });
 

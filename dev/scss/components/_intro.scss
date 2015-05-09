@@ -1,0 +1,30 @@
+.intro {
+  background: #fff;
+  color: #444;
+  height: 95%;
+  position: absolute;
+    top: -94.5%;
+  transition: top .4s ease;
+  width: 100%;
+  
+  &.active {
+    top: 0;
+  }
+  
+  &::after {
+    background: #fff;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    color: #666;
+    content: 'About the Project';
+    display: block;
+    font-size: .8rem;
+    font-weight: bold;
+    line-height: 1.5rem;
+    padding: 0 20px;
+    position: absolute;
+      bottom: -1.5rem;
+      left: 50%;
+    transform: translate(-50%, 0);
+  }
+}

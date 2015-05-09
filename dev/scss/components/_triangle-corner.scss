@@ -1,6 +1,10 @@
 $triangle-size: 80px;
 
 .triangle-corner {
+  position: absolute;
+    top: .5%;
+    left: 0;
+  
   li {
     border-color: transparent;
     border-style: solid;
@@ -149,5 +153,22 @@ $triangle-size: 80px;
       top: 2 * $triangle-size;
       left: $triangle-size;
     }
+  }
+}
+
+.logo {
+  opacity: .75;
+  position: absolute;
+    bottom: 40px;
+    left: 40px;
+  transition: opacity .2s ease;
+  width: 120px;
+  
+  img {
+    max-width: 100%;
+  }
+  
+  &:hover {
+    opacity: 1;
   }
 }
