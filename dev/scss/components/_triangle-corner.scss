@@ -2,8 +2,10 @@ $triangle-size: 80px;
 
 .triangle-corner {
   position: absolute;
-    top: .5%;
+//    top: .5%;
+//    bottom: 0;
     left: 0;
+//  transform: scaleY(-1);
   
   li {
     border-color: transparent;

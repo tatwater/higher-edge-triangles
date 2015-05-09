@@ -16,6 +16,19 @@
       top: 0;
       right: 0;
     width: 80px;
+    z-index: 2;
+    
+    &::before {
+      background: #fff;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+        top: 0;
+        right: 0;
+      width: 100px;
+      z-index: -1;
+    }
   }
   h2 {
     margin: -1rem 0 1rem;
@@ -25,22 +38,67 @@
     margin-right: 20px;
   }
   
+  .down-arrow {
+    background: none;
+    border: none;
+    display: block;
+  	height: 36px;
+    outline: none;
+    position: absolute;
+      bottom: 100px;
+      left: 50%;
+    margin-bottom: 1rem;
+    transform: translate(-50%, 0);
+    width: 78px;
+    
+    &::before {
+      background: $purple-dark;
+      content: '';
+      display: block;
+      height: 50px;
+      position: absolute;
+        top: -8px;
+        left: 18px;
+      transform: rotate(-50deg);
+      transition: background .2s ease;
+      width: 3px;
+    }
+    &::after {
+      background: $purple-dark;
+      content: '';
+      display: block;
+      height: 50px;
+      position: absolute;
+        top: -8px;
+        left: 55px;
+      transform: rotate(50deg);
+      transition: background .2s ease;
+      width: 3px;
+    }
+  }
+  
   .toggle-zone {
     background: none;
     border: none;
     cursor: default;
-    height: 5.3%;
+    height: 5.8%;
     outline: none;
     position: absolute;
       bottom: -5.3%;
     width: 100%;
+    z-index: 1;
   }
   
   &.active {
     top: 0;
+    
+    &::before {
+      bottom: 0;
+      color: #fff;
+    } 
   }
   
-  &::after {
+  &::before {
     background: #fff;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
@@ -55,5 +113,6 @@
       bottom: -1.5rem;
       left: 50%;
     transform: translate(-50%, 0);
+    transition: bottom .2s ease, color .2s ease;
   }
 }

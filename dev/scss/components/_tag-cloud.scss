@@ -2,8 +2,8 @@
   border-left: 1px solid #666;
   font-size: 0;
   line-height: 1rem;
-  margin-top: 3rem;
-  padding-left: 20px;
+  margin-top: 2.5rem;
+  padding: .5rem 0 0 20px;
   
   span {
     background: $green;
@@ -14,6 +14,36 @@
     font-weight: bold;
     line-height: 1rem;
     margin-right: 5px;
+    overflow: hidden;
     padding: .1rem 10px;
+    transition: background .2s ease;
+    
+    a {
+      color: inherit;
+      display: block;
+      text-decoration: none;
+    }
+    
+    &.green {
+      background: $green;
+      
+      &:hover {
+        background: $green-light;
+      }
+    }
+    &.blue {
+      background: $blue;
+      
+      &:hover {
+        background: $blue-light;
+      }
+    }
+    &.purple {
+      background: $purple;
+      
+      &:hover {
+        background: $purple-light;
+      }
+    }
   }
 }

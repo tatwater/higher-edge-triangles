@@ -11,6 +11,7 @@
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Project Polygon</title>
   </head>
+  <?php include "includes/load-page.php"; ?>
   <body>
     <ul class="triangle-corner">
       <li></li>
@@ -109,46 +110,43 @@
           </div>
           <div class="col">
             <div class="tag-cloud">
-              <span>History</span>
-              <span>Dance</span>
-              <span>Engineering</span>
-              <span>Math</span>
-              <span>Politics</span>
-              <span>Computer Science</span>
-              <span>Design</span>
-              <span>Business</span>
-              <span>Medicine</span>
-              <span>History</span>
-              <span>Dance</span>
-              <span>Engineering</span>
-              <span>Math</span>
-              <span>Politics</span>
-              <span>Computer Science</span>
-              <span>Design</span>
-              <span>Business</span>
-              <span>Medicine</span>
-              <span>History</span>
-              <span>Dance</span>
-              <span>Engineering</span>
-              <span>Math</span>
-              <span>Politics</span>
-              <span>Computer Science</span>
-              <span>Design</span>
-              <span>Business</span>
-              <span>Medicine</span>
-              <span>History</span>
-              <span>Dance</span>
-              <span>Engineering</span>
-              <span>Math</span>
-              <span>Politics</span>
-              <span>Computer Science</span>
-              <span>Design</span>
-              <span>Business</span>
-              <span>Medicine</span>
+              <span class="blue"><a href="">History</a></span>
+              <span class="purple"><a href="">Dance</a></span>
+              <span class="blue"><a href="">Engineering</a></span>
+              <span class="green"><a href="">Math</a></span>
+              <span class="blue"><a href="">Politics</a></span>
+              <span class="green"><a href="">Computer Science</a></span>
+              <span class="purple"><a href="">Design</a></span>
+              <span class="purple"><a href="">Business</a></span>
+              <span class="green"><a href="">Medicine</a></span>
+              <span class="blue"><a href="">History</a></span>
+              <span class="purple"><a href="">Dance</a></span>
+              <span class="blue"><a href="">Engineering</a></span>
+              <span class="green"><a href="">Math</a></span>
+              <span class="blue"><a href="">Politics</a></span>
+              <span class="green"><a href="">Computer Science</a></span>
+              <span class="purple"><a href="">Design</a></span>
+              <span class="purple"><a href="">Business</a></span>
+              <span class="green"><a href="">Medicine</a></span>
+              <span class="blue"><a href="">History</a></span>
+              <span class="purple"><a href="">Dance</a></span>
+              <span class="blue"><a href="">Engineering</a></span>
+              <span class="green"><a href="">Math</a></span>
+              <span class="blue"><a href="">Politics</a></span>
+              <span class="green"><a href="">Computer Science</a></span>
+              <span class="purple"><a href="">Design</a></span>
+              <span class="purple"><a href="">Business</a></span>
+              <span class="green"><a href="">Medicine</a></span>
+              <span class="blue"><a href="">History</a></span>
+              <span class="purple"><a href="">Dance</a></span>
+              <span class="blue"><a href="">Engineering</a></span>
+              <span class="green"><a href="">Math</a></span>
+              <span class="blue"><a href="">Politics</a></span>
             </div>
           </div>
         </div>
       </div>
+      <button class="down-arrow" data-toggle="intro"></button>
       <button class="toggle-zone" data-toggle="intro"></button>
     </section>
   </body>
