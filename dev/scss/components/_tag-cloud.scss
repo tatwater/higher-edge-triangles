@@ -24,6 +24,19 @@
       text-decoration: none;
     }
     
+    &[data-color="My dream is"] {
+      background: $orange;
+    }
+    &[data-color="My favorite class is"] {
+      background: $blue;
+    }
+    &[data-color="My hobbies are"] {
+      background: $pink;
+    }
+    &[data-color="Category"] {
+      background: $orange;
+    }
+    
     &.green {
       background: $green;
       

@@ -7,6 +7,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/vendor/slick.js"></script>
     <script src="js/scripts.js"></script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Project Polygon</title>
@@ -82,7 +83,11 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
           </div>
         </div>
         <div class="col">
-          <div class="triangle">
+          <div class="gallery">
+            <img src="img/triangle_orange_bl.png" />
+            <img src="img/triangle_orange_tr.png" />
+            <img src="img/triangle_orange_tl.png" />
+            <img src="img/triangle_orange_br.png" />
           </div>
         </div>
       </div>
@@ -138,7 +143,15 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
           </div>
           <div class="col">
             <div class="tag-cloud">
-              <span class="blue"><a href="">History</a></span>
+<?php
+//  $topics_table = mysql_query("SELECT * FROM topics;", $db_connection);
+  if ($topics_table) {
+    while ($row = mysql_fetch_array($topics_table)) {
+      echo "              <span data-color='" . $row['category'] . "'><a href='?topic_id=" . $row['id'] . "'>" . $row['title'] . "</a></span>\n";
+    }
+  }
+?>
+<!--              <span class="blue"><a href="">History</a></span>
               <span class="purple"><a href="">Dance</a></span>
               <span class="blue"><a href="">Engineering</a></span>
               <span class="green"><a href="">Math</a></span>
@@ -166,10 +179,7 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
               <span class="purple"><a href="">Business</a></span>
               <span class="green"><a href="">Medicine</a></span>
               <span class="blue"><a href="">History</a></span>
-              <span class="purple"><a href="">Dance</a></span>
-              <span class="blue"><a href="">Engineering</a></span>
-              <span class="green"><a href="">Math</a></span>
-              <span class="blue"><a href="">Politics</a></span>
+              <span class="purple"><a href="">Dance</a></span>-->
             </div>
           </div>
         </div>
