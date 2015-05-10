@@ -11,34 +11,58 @@
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Project Polygon</title>
   </head>
-  <?php include "includes/manage-db.php"; ?>
-  <?php include "includes/load-data.php"; ?>
+  <?php
+    include "includes/manage-db.php";
+    include "includes/load-data.php";
+    
+    $noticeText = "";
+    mysql_select_db("project_polygon", $db_connection);
+    
+    $lastRecord = mysql_query("SELECT * FROM topics WHERE id = (SELECT MAX(id) FROM topics);", $db_connection);
+    $last = mysql_fetch_array($lastRecord);
+    $numTopics = $last["id"];
+    
+    if (isset($_GET["topic_id"]))
+      $topicID = $_GET["topic_id"];
+    else
+      $topicID = rand(1, $numTopics);
+    
+    $topicData = mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id = '" . $topicID . "';", $db_connection));
+    
+    $majorData = array();
+    $temp = mysql_query("SELECT * FROM major_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+    while ($majorTopicRow = mysql_fetch_array($temp)) {
+      $temp2 = mysql_query("SELECT * FROM majors WHERE name = '" . $majorTopicRow["major_name"] . "';", $db_connection);
+      while ($majorRow = mysql_fetch_array($temp2)) {
+        array_push($majorData, array($majorRow["name"], $majorRow["url"]));
+      }
+    }
+    
+    $collegeData = array();
+    $temp = mysql_query("SELECT * FROM college_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+    while ($collegeTopicRow = mysql_fetch_array($temp)) {
+      $temp2 = mysql_query("SELECT * FROM colleges WHERE name = '" . $collegeTopicRow["college_name"] . "';", $db_connection);
+      while ($collegeRow = mysql_fetch_array($temp2)) {
+        array_push($collegeData, array($collegeRow["name"], $collegeRow["url"]));
+      }
+    }
+    
+    $careerData = array();
+    $temp = mysql_query("SELECT * FROM career_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+    while ($careerTopicRow = mysql_fetch_array($temp)) {
+      $temp2 = mysql_query("SELECT * FROM careers WHERE name = '" . $careerTopicRow["career_name"] . "';", $db_connection);
+      while ($careerRow = mysql_fetch_array($temp2)) {
+        array_push($careerData, array($careerRow["name"], $careerRow["url"]));
+      }
+    }
+  ?>
   <body>
     <ul class="triangle-corner">
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
+<?php
+for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
+  echo "      <li></li>\n";
+}
+?>
     </ul>
     <div class="logo">
       <a href="http://higheredgect.org/"><img src="img/logo.png" /></a>
@@ -47,11 +71,14 @@
       <div class="row two">
         <div class="col">
           <div class="category-title">
-            <a href=""><span class="arrow up"></span></a>
-            <p class="subhead">my favorite class is</p>
-            <h1>History</h1>
-            <p>23 students</p>
-            <a href=""><span class="arrow down"></span></a>
+            <a href="?topic_id=<?php echo ($topicID + $numTopics - 2) % $numTopics + 1; ?>"><span class="arrow up"></span></a>
+            <p class="subhead" data-color="<?php echo $topicData["category"]; ?>"><?php echo $topicData["category"]; ?></p>
+            <h1><?php echo $topicData["title"]; ?></h1>
+            <p><?php echo $topicData["numDuplicates"] . " student";
+                     if ($topicData["numDuplicates"] != 1)
+                       echo "s"; ?></p>
+            <p><?php echo $noticeText; ?></p>
+            <a href="?topic_id=<?php echo ($topicID + $numTopics) % $numTopics + 1; ?>"><span class="arrow down"></span></a>
           </div>
         </div>
         <div class="col">
@@ -63,38 +90,38 @@
     <section class="info">
       <button class="close">X</button>
       <div class="content">
-        <p class="subhead">my favorite class is</p>
-        <h1>History</h1>
-        <p>Here's a short description about History</p>
+        <p class="subhead"><?php echo $topicData["category"]; ?></p>
+        <h1><?php echo $topicData["title"]; ?></h1>
+        <p><?php echo $topicData["description"]; ?></p>
         <div class="row three">
           <div class="col">
             <h3>Majors</h3>
             <ul>
-              <li><a href="">Thing one</a></li>
-              <li><a href="">Thing two</a></li>
-              <li><a href="">Thing three</a></li>
-              <li><a href="">Thing four</a></li>
-              <li><a href="">Thing five</a></li>
+<?php
+  for ($i = 0; $i < 5; $i++) {
+    echo "              <li><a href='" . $majorData[$i][1] . "'>" . $majorData[$i][0] . "</a></li>\n";
+  }
+?>
             </ul>
           </div>
           <div class="col">
             <h3>Colleges</h3>
             <ul>
-              <li><a href="">Thing one</a></li>
-              <li><a href="">Thing two</a></li>
-              <li><a href="">Thing three</a></li>
-              <li><a href="">Thing four</a></li>
-              <li><a href="">Thing five</a></li>
+<?php
+  for ($i = 0; $i < 5; $i++) {
+    echo "              <li><a href='" . $collegeData[$i][1] . "'>" . $collegeData[$i][0] . "</a></li>\n";
+  }
+?>
             </ul>
           </div>
           <div class="col">
             <h3>Careers</h3>
             <ul>
-              <li><a href="">Thing one</a></li>
-              <li><a href="">Thing two</a></li>
-              <li><a href="">Thing three</a></li>
-              <li><a href="">Thing four</a></li>
-              <li><a href="">Thing five</a></li>
+<?php
+  for ($i = 0; $i < 5; $i++) {
+    echo "              <li><a href='" . $careerData[$i][1] . "'>" . $careerData[$i][0] . "</a></li>\n";
+  }
+?>
             </ul>
           </div>
         </div>

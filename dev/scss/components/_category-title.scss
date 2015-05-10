@@ -4,8 +4,24 @@
   h1 {
     margin: 0 0 1rem -3px;
   }
-  p:not(".subhead") {
+  p {
     color: #ddd;
+  }
+  .subhead {
+    text-transform: lowercase;
+    
+    &[data-color="My dream is"] {
+      color: $orange;
+    }
+    &[data-color="My favorite class is"] {
+      color: $blue;
+    }
+    &[data-color="My hobbies are"] {
+      color: $pink;
+    }
+    &[data-color="Category"] {
+      color: $orange;
+    }
   }
   .arrow {
     display: block;

@@ -126,10 +126,6 @@
     $record = mysql_query("SELECT * FROM topics WHERE id = (SELECT MAX(id) FROM topics);", $db_connection);
     $row = mysql_fetch_array($record);
     $topicID = $row["id"];
-    $noticeText .= "ID: " . $topicID . "<br />";
-    
-    
-    $cfg['PersistentConnections'] = FALSE;
     
     // Insert into images
     $cmd = "INSERT INTO images (url, topic_id)

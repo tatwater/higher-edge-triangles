@@ -13,47 +13,52 @@
   </head>
   <?php include "includes/manage-db.php"; ?>
   <body>
-    <div style="position: absolute; top: 0; left: 0;">
+    <div style="background: rgba(0, 0, 0, .5); padding: 10px; position: absolute; top: 0; left: 0; z-index: 10;">
       <p><?php echo $noticeText; ?></p>
     </div>
     <div class="content">
       <h2>Admin Panel</h2>
       <form action="admin.php" method="GET">
         <input name="title" placeholder="Title" type="text" />
-        <input name="category" placeholder="Category" type="text" />
-        <input name="numDuplicates" placeholder="Number of Duplicates" type="text" />
+        <select name="category">
+          <option value="">Select a Category...</option>
+          <option value="My dream is">My dream is</option>
+          <option value="My favorite class is">My favorite class is</option>
+          <option value="My hobbies are">My hobbies are</option>
+        </select>
+        <input name="numDuplicates" placeholder="Number of Duplicates" type="number" />
         <textarea name="description" placeholder="Description"></textarea>
-        <input name="image1_url" placeholder="Image 1 URL" type="text" />
+        <input name="image1_url" placeholder="Image 1 URL" type="url" />
         <input name="major1" placeholder="Major 1" type="text" />
-        <input name="major1_url" placeholder="Major 1 URL" type="text" />
+        <input name="major1_url" placeholder="Major 1 URL" type="url" />
         <input name="major2" placeholder="Major 2" type="text" />
-        <input name="major2_url" placeholder="Major 2 URL" type="text" />
+        <input name="major2_url" placeholder="Major 2 URL" type="url" />
         <input name="major3" placeholder="Major 3" type="text" />
-        <input name="major3_url" placeholder="Major 3 URL" type="text" />
+        <input name="major3_url" placeholder="Major 3 URL" type="url" />
         <input name="major4" placeholder="Major 4" type="text" />
-        <input name="major4_url" placeholder="Major 4 URL" type="text" />
+        <input name="major4_url" placeholder="Major 4 URL" type="url" />
         <input name="major5" placeholder="Major 5" type="text" />
-        <input name="major5_url" placeholder="Major 5 URL" type="text" />
+        <input name="major5_url" placeholder="Major 5 URL" type="url" />
         <input name="college1" placeholder="College 1" type="text" />
-        <input name="college1_url" placeholder="College 1 URL" type="text" />
+        <input name="college1_url" placeholder="College 1 URL" type="url" />
         <input name="college2" placeholder="College 2" type="text" />
-        <input name="college2_url" placeholder="College 2 URL" type="text" />
+        <input name="college2_url" placeholder="College 2 URL" type="url" />
         <input name="college3" placeholder="College 3" type="text" />
-        <input name="college3_url" placeholder="College 3 URL" type="text" />
+        <input name="college3_url" placeholder="College 3 URL" type="url" />
         <input name="college4" placeholder="College 4" type="text" />
-        <input name="college4_url" placeholder="College 4 URL" type="text" />
+        <input name="college4_url" placeholder="College 4 URL" type="url" />
         <input name="college5" placeholder="College 5" type="text" />
-        <input name="college5_url" placeholder="College 5 URL" type="text" />
+        <input name="college5_url" placeholder="College 5 URL" type="url" />
         <input name="career1" placeholder="Career 1" type="text" />
-        <input name="career1_url" placeholder="Career 1 URL" type="text" />
+        <input name="career1_url" placeholder="Career 1 URL" type="url" />
         <input name="career2" placeholder="Career 2" type="text" />
-        <input name="career2_url" placeholder="Career 2 URL" type="text" />
+        <input name="career2_url" placeholder="Career 2 URL" type="url" />
         <input name="career3" placeholder="Career 3" type="text" />
-        <input name="career3_url" placeholder="Career 3 URL" type="text" />
+        <input name="career3_url" placeholder="Career 3 URL" type="url" />
         <input name="career4" placeholder="Career 4" type="text" />
-        <input name="career4_url" placeholder="Career 4 URL" type="text" />
+        <input name="career4_url" placeholder="Career 4 URL" type="url" />
         <input name="career5" placeholder="Career 5" type="text" />
-        <input name="career5_url" placeholder="Career 5 URL" type="text" />
+        <input name="career5_url" placeholder="Career 5 URL" type="url" />
         <input name="insert" type="submit" value="Add record" />
       </form>
       <?php
