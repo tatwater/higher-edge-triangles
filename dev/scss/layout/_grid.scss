@@ -12,6 +12,7 @@ body {
 }
 .content {
   margin: 0 auto;
+  max-height: 100%;
   max-width: 1000px;
   padding: 0 20px;
   position: absolute;
@@ -23,6 +24,10 @@ body {
   &.center {
     text-align: center;
   }
+}
+td, th {
+  border: 1px solid $green;
+  padding: 5px 10px;
 }
 
 .row {

@@ -51,7 +51,6 @@
             <p class="subhead">my favorite class is</p>
             <h1>History</h1>
             <p>23 students</p>
-            <p><?php echo $noticeText; ?></p>
             <a href=""><span class="arrow down"></span></a>
           </div>
         </div>
