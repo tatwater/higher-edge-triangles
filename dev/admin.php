@@ -10,7 +10,7 @@
     <script src="js/vendor/slick.js"></script>
     <script src="js/scripts.js"></script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-    <title>Project Polygon</title>
+    <title>Admin | Project Polygon</title>
   </head>
   <?php include "includes/manage-db.php"; ?>
   <body>

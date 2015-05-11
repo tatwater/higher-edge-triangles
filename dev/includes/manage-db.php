@@ -17,7 +17,7 @@
                 title varchar(32),
                 category varchar(32),
                 numDuplicates int(4),
-                description varchar(32)
+                description varchar(256)
               );";
       if (mysql_query($cmd, $db_connection))
         $noticeText .= "Table 'topics' created successfully.<br />";
