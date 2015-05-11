@@ -107,15 +107,15 @@
   }
   
   // Insert new record
-  else if (isset($_GET["insert"])) {
+  else if (isset($_POST["insert"])) {
     mysql_select_db("project_polygon", $db_connection);
     
     // Insert into topics
     $cmd = "INSERT INTO topics (title, category, numDuplicates, description)
-              VALUES ('" . $_GET["title"] . "',
-                      '" . $_GET["category"] . "',
-                      '" . $_GET["numDuplicates"] . "',
-                      '" . $_GET["description"] . "'
+              VALUES ('" . $_POST["title"] . "',
+                      '" . $_POST["category"] . "',
+                      '" . count($_FILES["images"]["name"]) . "',
+                      '" . $_POST["description"] . "'
             );";
     if (mysql_query($cmd, $db_connection))
       $noticeText .= "Table 'topics' filled successfully.<br />";
@@ -128,27 +128,47 @@
     $topicID = $row["id"];
     
     // Insert into images
-    $cmd = "INSERT INTO images (url, topic_id)
-              VALUES ('" . $_GET["image1_url"] . "',
-                      '" . $topicID . "'
-            );";
-    if (mysql_query($cmd, $db_connection))
-      $noticeText .= "Table 'images' filled successfully.<br />";
-    else
-      $noticeText .= "Unable to fill table 'images': " . mysql_error() . "<br />";
+    $valid_formats = array("jpg", "jpeg", "png", "gif");
+    $max_file_size = 500000;
+    $target_dir = "img/uploads/";
+    
+    foreach ($_FILES["images"]["name"] as $f => $name) {
+      if ($_FILES["images"]["error"][$f] == 4) // if any error found, skip file
+        continue;
+      if ($_FILES["images"]["error"][$f] == 0)
+        if ($_FILES['images']['size'][$f] > $max_file_size) { // skip files that are too large
+          $noticeText .= "$name is too large.\n";
+          continue;
+        }
+      	elseif (!in_array(pathinfo($name, PATHINFO_EXTENSION), $valid_formats)) { // skip non-image uploads
+      		$noticeText .= "$name is not a valid format.\n";
+      		continue;
+      	}
+        else
+          if (move_uploaded_file($_FILES["images"]["tmp_name"][$f], $target_dir . $name)) {
+            $cmd = "INSERT INTO images (url, topic_id)
+                      VALUES ('" . $name . "',
+                              '" . $topicID . "'
+                    );";
+            if (mysql_query($cmd, $db_connection))
+              $noticeText .= "Image '" . $name . "' uploaded successfully.<br />";
+            else
+              $noticeText .= "Unable to upload image '" . $name . "': " . mysql_error() . "<br />";
+          }
+    }
     
     // Insert into majors
     $cmd = "INSERT INTO majors (name, url)
-              VALUES ('" . $_GET["major1"] . "',
-                      '" . $_GET["major1_url"] . "'),
-                     ('" . $_GET["major2"] . "',
-                      '" . $_GET["major2_url"] . "'),
-                     ('" . $_GET["major3"] . "',
-                      '" . $_GET["major3_url"] . "'),
-                     ('" . $_GET["major4"] . "',
-                      '" . $_GET["major4_url"] . "'),
-                     ('" . $_GET["major5"] . "',
-                      '" . $_GET["major5_url"] . "'
+              VALUES ('" . $_POST["major1"] . "',
+                      '" . $_POST["major1_url"] . "'),
+                     ('" . $_POST["major2"] . "',
+                      '" . $_POST["major2_url"] . "'),
+                     ('" . $_POST["major3"] . "',
+                      '" . $_POST["major3_url"] . "'),
+                     ('" . $_POST["major4"] . "',
+                      '" . $_POST["major4_url"] . "'),
+                     ('" . $_POST["major5"] . "',
+                      '" . $_POST["major5_url"] . "'
             );";
     if (mysql_query($cmd, $db_connection))
       $noticeText .= "Table 'majors' filled successfully.<br />";
@@ -157,16 +177,16 @@
     
     // Insert into colleges
     $cmd = "INSERT INTO colleges (name, url)
-              VALUES ('" . $_GET["college1"] . "',
-                      '" . $_GET["college1_url"] . "'),
-                     ('" . $_GET["college2"] . "',
-                      '" . $_GET["college2_url"] . "'),
-                     ('" . $_GET["college3"] . "',
-                      '" . $_GET["college3_url"] . "'),
-                     ('" . $_GET["college4"] . "',
-                      '" . $_GET["college4_url"] . "'),
-                     ('" . $_GET["college5"] . "',
-                      '" . $_GET["college5_url"] . "'
+              VALUES ('" . $_POST["college1"] . "',
+                      '" . $_POST["college1_url"] . "'),
+                     ('" . $_POST["college2"] . "',
+                      '" . $_POST["college2_url"] . "'),
+                     ('" . $_POST["college3"] . "',
+                      '" . $_POST["college3_url"] . "'),
+                     ('" . $_POST["college4"] . "',
+                      '" . $_POST["college4_url"] . "'),
+                     ('" . $_POST["college5"] . "',
+                      '" . $_POST["college5_url"] . "'
             );";
     if (mysql_query($cmd, $db_connection))
       $noticeText .= "Table 'colleges' filled successfully.<br />";
@@ -175,16 +195,16 @@
     
     // Insert into careers
     $cmd = "INSERT INTO careers (name, url)
-              VALUES ('" . $_GET["career1"] . "',
-                      '" . $_GET["career1_url"] . "'),
-                     ('" . $_GET["career2"] . "',
-                      '" . $_GET["career2_url"] . "'),
-                     ('" . $_GET["career3"] . "',
-                      '" . $_GET["career3_url"] . "'),
-                     ('" . $_GET["career4"] . "',
-                      '" . $_GET["career4_url"] . "'),
-                     ('" . $_GET["career5"] . "',
-                      '" . $_GET["career5_url"] . "'
+              VALUES ('" . $_POST["career1"] . "',
+                      '" . $_POST["career1_url"] . "'),
+                     ('" . $_POST["career2"] . "',
+                      '" . $_POST["career2_url"] . "'),
+                     ('" . $_POST["career3"] . "',
+                      '" . $_POST["career3_url"] . "'),
+                     ('" . $_POST["career4"] . "',
+                      '" . $_POST["career4_url"] . "'),
+                     ('" . $_POST["career5"] . "',
+                      '" . $_POST["career5_url"] . "'
             );";
     if (mysql_query($cmd, $db_connection))
       $noticeText .= "Table 'careers' filled successfully.<br />";
@@ -193,15 +213,15 @@
     
     // Insert into major_topic
     $cmd = "INSERT INTO major_topic (major_name, topic_id)
-              VALUES ('" . $_GET["major1"] . "',
+              VALUES ('" . $_POST["major1"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["major2"] . "',
+                     ('" . $_POST["major2"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["major3"] . "',
+                     ('" . $_POST["major3"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["major4"] . "',
+                     ('" . $_POST["major4"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["major5"] . "',
+                     ('" . $_POST["major5"] . "',
                       '" . $topicID . "'
             );";
     if (mysql_query($cmd, $db_connection))
@@ -211,15 +231,15 @@
     
     // Insert into college_topic
     $cmd = "INSERT INTO college_topic (college_name, topic_id)
-              VALUES ('" . $_GET["college1"] . "',
+              VALUES ('" . $_POST["college1"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["college2"] . "',
+                     ('" . $_POST["college2"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["college3"] . "',
+                     ('" . $_POST["college3"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["college4"] . "',
+                     ('" . $_POST["college4"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["college5"] . "',
+                     ('" . $_POST["college5"] . "',
                       '" . $topicID . "'
             );";
     if (mysql_query($cmd, $db_connection))
@@ -229,15 +249,15 @@
     
     // Insert into career_topic
     $cmd = "INSERT INTO career_topic (career_name, topic_id)
-              VALUES ('" . $_GET["career1"] . "',
+              VALUES ('" . $_POST["career1"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["career2"] . "',
+                     ('" . $_POST["career2"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["career3"] . "',
+                     ('" . $_POST["career3"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["career4"] . "',
+                     ('" . $_POST["career4"] . "',
                       '" . $topicID . "'),
-                     ('" . $_GET["career5"] . "',
+                     ('" . $_POST["career5"] . "',
                       '" . $topicID . "'
             );";
     if (mysql_query($cmd, $db_connection))
@@ -257,12 +277,12 @@
   $career_topic_table = mysql_query("SELECT * FROM career_topic;", $db_connection);
   
 //  // Edit existing record
-//  else if (isset($_GET["edit"])) {
+//  else if (isset($_POST["edit"])) {
 //    
 //  }
 //  
 //  // Remove existing record
-//  else if (isset($_GET["remove"])) {
+//  else if (isset($_POST["remove"])) {
 //    
 //  }
 ?>

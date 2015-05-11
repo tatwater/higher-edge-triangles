@@ -30,6 +30,8 @@
     
     $topicData = mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id = '" . $topicID . "';", $db_connection));
     
+    $firstImageData = mysql_fetch_array(mysql_query("SELECT * FROM images WHERE topic_id = '" . $topicID . "' LIMIT 1;", $db_connection));
+    
     $majorData = array();
     $temp = mysql_query("SELECT * FROM major_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
     while ($majorTopicRow = mysql_fetch_array($temp)) {
@@ -84,10 +86,7 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
         </div>
         <div class="col">
           <div class="gallery">
-            <img src="img/triangle_orange_bl.png" />
-            <img src="img/triangle_orange_tr.png" />
-            <img src="img/triangle_orange_tl.png" />
-            <img src="img/triangle_orange_br.png" />
+            <img src="img/uploads/<?php echo $firstImageData["url"]; ?>" />
           </div>
         </div>
       </div>

@@ -7,6 +7,7 @@
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="styles.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="js/vendor/slick.js"></script>
     <script src="js/scripts.js"></script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Project Polygon</title>
@@ -18,7 +19,7 @@
     </div>
     <div class="content">
       <h2>Admin Panel</h2>
-      <form action="admin.php" method="GET">
+      <form action="admin.php" enctype="multipart/form-data" method="post">
         <input name="title" placeholder="Title" type="text" />
         <select name="category">
           <option value="">Select a Category...</option>
@@ -26,9 +27,8 @@
           <option value="My favorite class is">My favorite class is</option>
           <option value="My hobbies are">My hobbies are</option>
         </select>
-        <input name="numDuplicates" placeholder="Number of Duplicates" type="number" />
         <textarea name="description" placeholder="Description"></textarea>
-        <input name="image1_url" placeholder="Image 1 URL" type="url" />
+        <input accept="image/*" multiple="multiple" name="images[]" type="file" />
         <input name="major1" placeholder="Major 1" type="text" />
         <input name="major1_url" placeholder="Major 1 URL" type="url" />
         <input name="major2" placeholder="Major 2" type="text" />
