@@ -37,13 +37,22 @@ $(document).ready(function() {
     });
     
     // populate gallery with all images that aren't the placeholder
+    var numLoaded = 1;
     for (var i = 0; i < imageList.length; i++)
-      if ("img/uploads/" + imageList[i] != $(".gallery").find("img").attr("src"))
+      if ("img/uploads/" + imageList[i] != $(".gallery").find("img").attr("src")) {
         $('.gallery').slick('slickAdd', '<img src="img/uploads/' + imageList[i] + '" />');
-    
-    // force advance after population
-    setTimeout(function() {
-      $(".gallery").slick('slickNext');
-    }, 5000);
+        $(".slick-track img").last().load(function() {
+          numLoaded++;
+          if (numLoaded == imageList.length)
+            imagesLoaded();
+        });
+      }
   });
 });
+
+function imagesLoaded() {
+  // Force gallery advance
+  setTimeout(function() {
+    $(".gallery").slick('slickNext');
+  }, 5000);
+}
