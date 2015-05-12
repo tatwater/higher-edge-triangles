@@ -23,6 +23,11 @@
       color: $orange;
     }
   }
+  [href^="?topic_id"] {
+    display: block;
+    height: 36px;
+    width: 78px;
+  }
   .arrow {
     display: block;
   	height: 36px;

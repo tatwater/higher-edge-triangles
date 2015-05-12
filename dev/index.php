@@ -102,9 +102,8 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
             <h3>Majors</h3>
             <ul>
 <?php
-  for ($i = 0; $i < 5; $i++) {
+  for ($i = 0; $i < count($majorData); $i++)
     echo "              <li><a href='" . $majorData[$i][1] . "'>" . $majorData[$i][0] . "</a></li>\n";
-  }
 ?>
             </ul>
           </div>
@@ -112,9 +111,8 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
             <h3>Colleges</h3>
             <ul>
 <?php
-  for ($i = 0; $i < 5; $i++) {
+  for ($i = 0; $i < count($collegeData); $i++)
     echo "              <li><a href='" . $collegeData[$i][1] . "'>" . $collegeData[$i][0] . "</a></li>\n";
-  }
 ?>
             </ul>
           </div>
@@ -122,9 +120,8 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
             <h3>Careers</h3>
             <ul>
 <?php
-  for ($i = 0; $i < 5; $i++) {
+  for ($i = 0; $i < count($careerData); $i++)
     echo "              <li><a href='" . $careerData[$i][1] . "'>" . $careerData[$i][0] . "</a></li>\n";
-  }
 ?>
             </ul>
           </div>
@@ -143,42 +140,11 @@ for ($i = 0; $i < 23; $i++) { // 18 without white, 23 with
           <div class="col">
             <div class="tag-cloud">
 <?php
-//  $topics_table = mysql_query("SELECT * FROM topics;", $db_connection);
-  if ($topics_table) {
-    while ($row = mysql_fetch_array($topics_table)) {
+  // make colored tags for all topics
+  if ($topics_table)
+    while ($row = mysql_fetch_array($topics_table))
       echo "              <span data-color='" . $row['category'] . "'><a href='?topic_id=" . $row['id'] . "'>" . $row['title'] . "</a></span>\n";
-    }
-  }
 ?>
-<!--              <span class="blue"><a href="">History</a></span>
-              <span class="purple"><a href="">Dance</a></span>
-              <span class="blue"><a href="">Engineering</a></span>
-              <span class="green"><a href="">Math</a></span>
-              <span class="blue"><a href="">Politics</a></span>
-              <span class="green"><a href="">Computer Science</a></span>
-              <span class="purple"><a href="">Design</a></span>
-              <span class="purple"><a href="">Business</a></span>
-              <span class="green"><a href="">Medicine</a></span>
-              <span class="blue"><a href="">History</a></span>
-              <span class="purple"><a href="">Dance</a></span>
-              <span class="blue"><a href="">Engineering</a></span>
-              <span class="green"><a href="">Math</a></span>
-              <span class="blue"><a href="">Politics</a></span>
-              <span class="green"><a href="">Computer Science</a></span>
-              <span class="purple"><a href="">Design</a></span>
-              <span class="purple"><a href="">Business</a></span>
-              <span class="green"><a href="">Medicine</a></span>
-              <span class="blue"><a href="">History</a></span>
-              <span class="purple"><a href="">Dance</a></span>
-              <span class="blue"><a href="">Engineering</a></span>
-              <span class="green"><a href="">Math</a></span>
-              <span class="blue"><a href="">Politics</a></span>
-              <span class="green"><a href="">Computer Science</a></span>
-              <span class="purple"><a href="">Design</a></span>
-              <span class="purple"><a href="">Business</a></span>
-              <span class="green"><a href="">Medicine</a></span>
-              <span class="blue"><a href="">History</a></span>
-              <span class="purple"><a href="">Dance</a></span>-->
             </div>
           </div>
         </div>

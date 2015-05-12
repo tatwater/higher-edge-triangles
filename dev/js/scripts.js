@@ -18,13 +18,17 @@ $(document).ready(function() {
   var topicID;
   
   // determine current topic for AJAX request
-  if (next > prev || next == 1)
+  //   no index-wrap if next > prev or next == 1
+  //   prev != 1 in case only one topic in database to prevent index out of bounds exception
+  if (next > prev || (next == 1 && prev != 1))
     topicID = prev + 1;
   else
     topicID = 1;
   
+  console.log(topicID);
   // AJAX to retrieve list of topic gallery images
   $.get("getImages.php?topic_id=" + topicID, function(imageList) {
+    console.log("HI: " + imageList + " :HI");
     imageList = imageList.split(",");
     
     // initialize Slick slider
@@ -41,7 +45,7 @@ $(document).ready(function() {
       pauseOnHover: false,
       slidesToShow: 1,
       slidesToScroll: 1,
-      speed: 5000,
+      speed: 1000,
       swipe: false,
       touchMove: false
     });
