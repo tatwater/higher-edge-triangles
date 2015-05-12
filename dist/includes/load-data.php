@@ -12,36 +12,36 @@
   else
     $topicID = rand(1, $numTopics);
   
-  // Get data from 'topic' table
+  // Get data from 'topics' table
   $topicData = mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id = '" . $topicID . "';", $db_connection));
   
-  // Get placeholder image from 'image' table
+  // Get placeholder image from 'images' table
   $firstImageData = mysql_fetch_array(mysql_query("SELECT * FROM images WHERE topic_id = '" . $topicID . "' LIMIT 1;", $db_connection));
   
+  // Get data from 'majors' table with current topic ID via 'major_topic'
   $majorData = array();
-  $temp = mysql_query("SELECT * FROM major_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
-  while ($majorTopicRow = mysql_fetch_array($temp)) {
-    $temp2 = mysql_query("SELECT * FROM majors WHERE name = '" . $majorTopicRow["major_name"] . "';", $db_connection);
-    while ($majorRow = mysql_fetch_array($temp2)) {
+  $cmd = mysql_query("SELECT * FROM major_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($majorTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM majors WHERE name = '" . $majorTopicRow["major_name"] . "';", $db_connection);
+    while ($majorRow = mysql_fetch_array($cmd2))
       array_push($majorData, array($majorRow["name"], $majorRow["url"]));
-    }
   }
   
+  // Get data from 'colleges' table with current topic ID via 'college_topic'
   $collegeData = array();
-  $temp = mysql_query("SELECT * FROM college_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
-  while ($collegeTopicRow = mysql_fetch_array($temp)) {
-    $temp2 = mysql_query("SELECT * FROM colleges WHERE name = '" . $collegeTopicRow["college_name"] . "';", $db_connection);
-    while ($collegeRow = mysql_fetch_array($temp2)) {
+  $cmd = mysql_query("SELECT * FROM college_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($collegeTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM colleges WHERE name = '" . $collegeTopicRow["college_name"] . "';", $db_connection);
+    while ($collegeRow = mysql_fetch_array($cmd2))
       array_push($collegeData, array($collegeRow["name"], $collegeRow["url"]));
-    }
   }
   
+  // Get data from 'careers' table with current topic ID via 'career_topic'
   $careerData = array();
-  $temp = mysql_query("SELECT * FROM career_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
-  while ($careerTopicRow = mysql_fetch_array($temp)) {
-    $temp2 = mysql_query("SELECT * FROM careers WHERE name = '" . $careerTopicRow["career_name"] . "';", $db_connection);
-    while ($careerRow = mysql_fetch_array($temp2)) {
+  $cmd = mysql_query("SELECT * FROM career_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($careerTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM careers WHERE name = '" . $careerTopicRow["career_name"] . "';", $db_connection);
+    while ($careerRow = mysql_fetch_array($cmd2))
       array_push($careerData, array($careerRow["name"], $careerRow["url"]));
-    }
   }
 ?>
