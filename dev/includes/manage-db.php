@@ -22,7 +22,7 @@
 //  }
   
   // Remove existing record
-//  else if (isset($_POST["remove"])) {
-//    
-//  }
+  else if (isset($_POST["delete"])) {
+    include "db-delete.php";
+  }
 ?>

@@ -28,14 +28,14 @@
       <div class="row two">
         <div class="col">
           <div class="category-title">
-            <a href="?topic_id=<?php echo ($topicID + $numTopics - 2) % $numTopics + 1; ?>"><span class="arrow up"></span></a>
+            <a href="?topic_id=<?php echo $prevTopicID; ?>"><span class="arrow up"></span></a>
             <p class="subhead" data-color="<?php echo $topicData["category"]; ?>"><?php echo $topicData["category"]; ?></p>
             <h1><?php echo $topicData["title"]; ?></h1>
             <p><?php echo $topicData["numDuplicates"] . " student";
                      if ($topicData["numDuplicates"] != 1)
                        echo "s"; ?></p>
             <p><?php echo $noticeText; ?></p>
-            <a href="?topic_id=<?php echo ($topicID + $numTopics) % $numTopics + 1; ?>"><span class="arrow down"></span></a>
+            <a href="?topic_id=<?php echo $nextTopicID; ?>"><span class="arrow down"></span></a>
           </div>
         </div>
         <div class="col">

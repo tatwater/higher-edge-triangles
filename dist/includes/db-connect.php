@@ -9,5 +9,5 @@
   
   // Select project database
   if (!mysql_select_db("project_polygon", $db_connection) && !isset($_GET["create"]))
-    die("Unable to select database 'project_polygon': " . mysql_error());
+    die("Unable to select database 'project_polygon'.");
 ?>

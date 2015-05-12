@@ -62,9 +62,30 @@
         <input name="insert" type="submit" value="Add record" />
       </form>
 <?php
-  // If 'topics' table has data, display table
+  // If 'topics' table has data, display remove form and topics table
   if ($topics_table = mysql_query("SELECT * FROM topics;", $db_connection)) {
 ?>
+      <form action="admin.php" method="post">
+        <select name="topic_id" required>
+          <option value="">Select a Record...</option>
+<?php
+  $tempTable = "";
+  
+  // Loop through 'topics' table data
+  while ($row = mysql_fetch_array($topics_table)) {
+    echo '          <option value="' . $row["id"] . '">' . $row["title"] . ' (' . $row["category"] . ')</option>';
+    $tempTable .= "        <tr>\n" .
+                  "          <td>" . $row['id'] . "</td>\n" .
+                  "          <td>" . $row['title'] . "</td>\n" .
+                  "          <td>" . $row['category'] . "</td>\n" .
+                  "          <td>" . $row['numDuplicates'] . "</td>\n" .
+                  "          <td>" . $row['description'] . "</td>\n" .
+                  "        </tr>\n";
+  }
+?>
+        </select>
+        <input name="delete" type="submit" value="Delete record" />
+      </form>
       <br />
       <p>Topics</p>
       <table>
@@ -75,19 +96,9 @@
           <th># of Duplicates</th>
           <th>Description</th>
         </tr>
-<?php
-  // Loop through 'topics' table data
-  while ($row = mysql_fetch_array($topics_table))
-    echo "        <tr>\n" .
-         "          <td>" . $row['id'] . "</td>\n" .
-         "          <td>" . $row['title'] . "</td>\n" .
-         "          <td>" . $row['category'] . "</td>\n" .
-         "          <td>" . $row['numDuplicates'] . "</td>\n" .
-         "          <td>" . $row['description'] . "</td>\n" .
-         "        </tr>\n";
-?>
-        </table>
-        <br />
+        <?php echo $tempTable; ?>
+      </table>
+      <br />
 <?php
   }
   

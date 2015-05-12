@@ -9,7 +9,7 @@
   // Drop existing database and all tables
   else if (isset($_GET["drop"])) {
     include "db-drop.php";
-  } 
+  }
   
   // Insert new topic data into all tables
   else if (isset($_POST["insert"])) {
@@ -22,7 +22,7 @@
 //  }
   
   // Remove existing record
-//  else if (isset($_POST["remove"])) {
-//    
-//  }
+  else if (isset($_POST["delete"])) {
+    include "db-delete.php";
+  }
 ?>
