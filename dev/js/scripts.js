@@ -14,7 +14,7 @@ $(document).ready(function() {
   });
   
   // AJAX to retrieve list of gallery image names
-  $.get("getImages.php?topic_id=" + topicID, function(imageList) {
+  $.get("includes/get-images.php?topic_id=" + topicID, function(imageList) {
     imageList = imageList.split(",");
     
     // initialize Slick slider
