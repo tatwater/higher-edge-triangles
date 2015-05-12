@@ -1,49 +1,7 @@
+/*
+ * COMPONENTS - GALLERY
+ */
+
 .gallery.slick-slider {
   margin-bottom: 0;
-  
-  .triangle {
-    border-color: transparent;
-    border-style: solid;
-    border-width: 0;
-    display: block;
-    float: right;
-  	height: 0;
-    width: 0;
-  
-    &.blue {
-    	border-bottom-color: $blue;
-      border-width: 0 450px 450px 0;
-    }
-    &.pink {
-    	border-bottom-color: $pink;
-      border-width: 0 450px 450px 0;
-    }
-    &.orange {
-    	border-bottom-color: $orange;
-      border-width: 0 450px 450px 0;
-    }
-  }
-}
-
-.triangle {
-  border-color: transparent;
-  border-style: solid;
-  border-width: 0;
-  display: block;
-  float: right;
-	height: 0;
-  width: 0;
-
-  &.blue {
-  	border-bottom-color: $blue;
-    border-width: 0 450px 450px 0;
-  }
-  &.pink {
-  	border-bottom-color: $pink;
-    border-width: 0 450px 450px 0;
-  }
-  &.orange {
-  	border-bottom-color: $orange;
-    border-width: 0 450px 450px 0;
-  }
 }

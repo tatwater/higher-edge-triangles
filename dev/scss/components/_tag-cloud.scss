@@ -1,11 +1,16 @@
+/*
+ * COMPONENTS - TAG CLOUD
+ */
+
 .tag-cloud {
   border-left: 1px solid #666;
   font-size: 0;
   line-height: 1rem;
+  list-style-type: none;
   margin-top: 2.5rem;
   padding: .5rem 0 0 20px;
   
-  span {
+  li {
     background: $green;
     border-radius: .7rem;
     color: #fafafa;
@@ -15,47 +20,34 @@
     line-height: 1rem;
     margin-right: 5px;
     overflow: hidden;
-    padding: .1rem 10px;
     transition: background .2s ease;
     
     a {
       color: inherit;
       display: block;
+      padding: .1rem 10px;
       text-decoration: none;
     }
     
     &[data-color="My dream is"] {
       background: $orange;
-    }
-    &[data-color="My favorite class is"] {
-      background: $blue;
-    }
-    &[data-color="My hobbies are"] {
-      background: $pink;
-    }
-    &[data-color="Category"] {
-      background: $orange;
-    }
-    
-    &.green {
-      background: $green;
       
       &:hover {
-        background: $green-light;
+        background: $orange-light;
       }
     }
-    &.blue {
+    &[data-color="My favorite class is"] {
       background: $blue;
       
       &:hover {
         background: $blue-light;
       }
     }
-    &.purple {
-      background: $purple;
+    &[data-color="My hobbies are"] {
+      background: $pink;
       
       &:hover {
-        background: $purple-light;
+        background: $pink-light;
       }
     }
   }

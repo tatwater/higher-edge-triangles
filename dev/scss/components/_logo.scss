@@ -1,0 +1,20 @@
+/*
+ * COMPONENTS - LOGO
+ */
+
+.logo {
+  opacity: .75;
+  position: absolute;
+    bottom: 40px;
+    left: 40px;
+  transition: opacity .2s ease;
+  width: 120px;
+  
+  img {
+    max-width: 100%;
+  }
+  
+  &:hover {
+    opacity: 1;
+  }
+}

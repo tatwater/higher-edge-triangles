@@ -63,7 +63,7 @@
       </form>
 <?php
   // If 'topics' table has data, display table
-  if ($topics_table = mysql_query("SELECT * FROM topics;", $db_connection)) {
+  if ($topics_table) {
 ?>
       <br />
       <p>Topics</p>
@@ -92,7 +92,7 @@
   }
   
   // If 'images' table has data, display table
-  if ($images_table = mysql_query("SELECT * FROM images;", $db_connection)) {
+  if ($images_table) {
 ?>
       <p>Images</p>
       <table>
@@ -114,7 +114,7 @@
   }
   
   // If 'majors' table has data, display table
-  if ($majors_table = mysql_query("SELECT * FROM majors;", $db_connection)) {
+  if ($majors_table) {
 ?>
       <p>Majors</p>
       <table>
@@ -136,7 +136,7 @@
   }
   
   // If 'colleges' table has data, display table
-  if ($colleges_table = mysql_query("SELECT * FROM colleges;", $db_connection)) {
+  if ($colleges_table) {
 ?>
       <p>Colleges</p>
       <table>
@@ -158,7 +158,7 @@
   }
   
   // If 'careers' table has data, display table
-  if ($careers_table = mysql_query("SELECT * FROM careers;", $db_connection)) {
+  if ($careers_table) {
 ?>
       <p>Careers</p>
       <table>
@@ -180,7 +180,7 @@
   }
   
   // If 'major_topic' table has data, display table
-  if ($major_topic_table = mysql_query("SELECT * FROM major_topic;", $db_connection)) {
+  if ($major_topic_table) {
 ?>
       <p>Major_Topic</p>
       <table>
@@ -202,7 +202,7 @@
   }
   
   // If 'college_topic' table has data, display table
-  if ($college_topic_table = mysql_query("SELECT * FROM college_topic;", $db_connection)) {
+  if ($college_topic_table) {
 ?>
       <p>College_Topic</p>
       <table>
@@ -224,7 +224,7 @@
   }
   
   // If 'career_topic' table has data, display table
-  if ($career_topic_table = mysql_query("SELECT * FROM career_topic;", $db_connection)) {
+  if ($career_topic_table) {
 ?>
       <p>Career_Topic</p>
       <table>

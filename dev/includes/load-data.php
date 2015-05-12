@@ -1,3 +1,47 @@
 <?php
-//  mysql_select_db("project_polygon", $db_connection);
+  include "db-connect.php";
+
+  // Find number of topics in database
+  $lastRecord = mysql_query("SELECT * FROM topics WHERE id = (SELECT MAX(id) FROM topics);", $db_connection);
+  $last = mysql_fetch_array($lastRecord);
+  $numTopics = $last["id"];
+  
+  // Set topic ID, random if not provided
+  if (isset($_GET["topic_id"]))
+    $topicID = $_GET["topic_id"];
+  else
+    $topicID = rand(1, $numTopics);
+  
+  // Get data from 'topics' table
+  $topicData = mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id = '" . $topicID . "';", $db_connection));
+  
+  // Get placeholder image from 'images' table
+  $firstImageData = mysql_fetch_array(mysql_query("SELECT * FROM images WHERE topic_id = '" . $topicID . "' LIMIT 1;", $db_connection));
+  
+  // Get data from 'majors' table with current topic ID via 'major_topic'
+  $majorData = array();
+  $cmd = mysql_query("SELECT * FROM major_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($majorTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM majors WHERE name = '" . $majorTopicRow["major_name"] . "';", $db_connection);
+    while ($majorRow = mysql_fetch_array($cmd2))
+      array_push($majorData, array($majorRow["name"], $majorRow["url"]));
+  }
+  
+  // Get data from 'colleges' table with current topic ID via 'college_topic'
+  $collegeData = array();
+  $cmd = mysql_query("SELECT * FROM college_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($collegeTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM colleges WHERE name = '" . $collegeTopicRow["college_name"] . "';", $db_connection);
+    while ($collegeRow = mysql_fetch_array($cmd2))
+      array_push($collegeData, array($collegeRow["name"], $collegeRow["url"]));
+  }
+  
+  // Get data from 'careers' table with current topic ID via 'career_topic'
+  $careerData = array();
+  $cmd = mysql_query("SELECT * FROM career_topic WHERE topic_id = '" . $topicID . "';", $db_connection);
+  while ($careerTopicRow = mysql_fetch_array($cmd)) {
+    $cmd2 = mysql_query("SELECT * FROM careers WHERE name = '" . $careerTopicRow["career_name"] . "';", $db_connection);
+    while ($careerRow = mysql_fetch_array($cmd2))
+      array_push($careerData, array($careerRow["name"], $careerRow["url"]));
+  }
 ?>

@@ -1,3 +1,7 @@
+/*
+ * COMPONENTS - CATEGORY TITLE
+ */
+
 .category-title {
   margin-top: 170px; //120
     
@@ -19,13 +23,11 @@
     &[data-color="My hobbies are"] {
       color: $pink;
     }
-    &[data-color="Category"] {
-      color: $orange;
-    }
   }
   [href^="?topic_id"] {
     display: block;
     height: 36px;
+    margin: 1rem 0;
     width: 78px;
   }
   .arrow {
@@ -34,7 +36,6 @@
     position: relative;
       top: 0;
       left: 2px;
-    margin-bottom: 1rem;
     width: 78px;
     
     &::before {
@@ -63,7 +64,6 @@
     }
     
     &.down {
-      margin: 1rem 0 0;
       position: relative;
         left: -1px;
       transform: rotate(180deg);
