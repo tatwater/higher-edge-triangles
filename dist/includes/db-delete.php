@@ -9,7 +9,8 @@
       mysql_query("DELETE FROM career_topic WHERE topic_id='" . $_POST["topic_id"] . "';", $db_connection)) {
     // Remove all uploaded images with given topic ID
     while ($imageListRow = mysql_fetch_array($imageListCmd))
-      unlink("img/uploads/" . $imageListRow["url"]);
+      if(file_exists("img/uploads/" . $imageListRow["url"]))
+        unlink("img/uploads/" . $imageListRow["url"]);
     $noticeText .= "Record deleted successfully.<br />";
   }
   else
