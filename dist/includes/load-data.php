@@ -10,8 +10,8 @@
   $last = mysql_fetch_array($lastRecord);
   $numTopics = $last["id"];
   
-  // Set topic ID, random from existing if not provided
-  if (isset($_GET["topic_id"]))
+  // Set topic ID, random from existing if not provided or invalid
+  if (isset($_GET["topic_id"]) && mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id='" . $_GET["topic_id"] . "';", $db_connection)))
     $topicID = $_GET["topic_id"];
   else {
     $topicID = rand(1, $numTopics);
