@@ -22,7 +22,7 @@
 ?>
     </ul>
     <div class="logo">
-      <a href="http://higheredgect.org/"><img src="img/logo.png" /></a>
+      <a href="http://higheredgect.org/"><img src="img/logo_light.png" /></a>
     </div>
     <section class="content">
       <div class="row two">
