@@ -1,7 +1,19 @@
 <?php
+  $site_password = "password"; // You should probably change this
+  
   // Create 'project_polygon' database
   if (mysql_query("CREATE DATABASE project_polygon;", $db_connection)) {
     mysql_select_db("project_polygon", $db_connection);
+    
+    // Create 'users' table with hashed databse
+    $cmd = "CREATE TABLE users(
+              password varchar(32)
+            );";
+    if (mysql_query($cmd, $db_connection))
+      $noticeText .= "Table 'users' created successfully.<br />";
+    else
+      $noticeText .= "Unable to create table 'users': " . mysql_error() . "<br />";
+    mysql_query("INSERT INTO users (password) VALUES ('" . crypt($site_password, "ccdpp2015") . "');", $db_connection);
     
     // Create 'topics' table
     $cmd = "CREATE TABLE topics(

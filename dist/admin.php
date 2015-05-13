@@ -6,9 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     <meta name="robots" content="noindex" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script src="js/vendor/slick.js"></script>
-    <script src="js/scripts.js"></script>
+    <script src="js/vendor/sha512.js"></script>
     <!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <title>Admin | Project Polygon</title>
   </head>
@@ -59,6 +57,7 @@
         <input name="career4_url" placeholder="Career 4 URL" type="url" />
         <input name="career5" placeholder="Career 5" type="text" />
         <input name="career5_url" placeholder="Career 5 URL" type="url" />
+        <input name="password" placeholder="Password" type="password" />
         <input name="insert" type="submit" value="Add record" />
       </form>
 <?php
@@ -84,6 +83,7 @@
   }
 ?>
         </select>
+        <input name="password" placeholder="Password" type="password" />
         <input name="delete" type="submit" value="Delete record" />
       </form>
       <br />

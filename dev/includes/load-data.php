@@ -6,7 +6,7 @@
     die("Unable to load from database 'project_polygon': " . mysql_error());
 
   // Find number of topics in database
-  $lastRecord = mysql_query("SELECT * FROM topics WHERE id=(SELECT MAX(id) FROM topics);", $db_connection);
+  $lastRecord = mysql_query("SELECT * FROM topics WHERE id=(SELECT MAX(id));", $db_connection);
   $last = mysql_fetch_array($lastRecord);
   $numTopics = $last["id"];
   
