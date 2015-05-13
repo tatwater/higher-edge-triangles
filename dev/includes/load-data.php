@@ -19,14 +19,14 @@
       $topicID = rand(1, $numTopics);
   }
   
-  // Calculate closest existing previous topic ID
+  // Calculate closest previous topic ID
   for ($i = 2; $i <= 2 * $numTopics; $i++) {
     $prevTopicID = ($topicID + $numTopics - $i) % $numTopics + 1;
     if (mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id='" . $prevTopicID . "';", $db_connection)))
       break;
   }
   
-  // Calculate closest existing next topic ID
+  // Calculate closest next topic ID
   for ($i = 0; $i <= 2 * $numTopics; $i++) {
     $nextTopicID = ($topicID + $numTopics + $i) % $numTopics + 1;
     if (mysql_fetch_array(mysql_query("SELECT * FROM topics WHERE id='" . $nextTopicID . "';", $db_connection)))

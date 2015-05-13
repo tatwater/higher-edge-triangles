@@ -12,11 +12,11 @@ The installation in the hich school was colorful, and those same colors were car
 
 #### Client-Side Interactivity
 
-The client side is a submission browsing experience. There is simple navigation: Previous and Next arrows to change the current topic, a link to Higher Edge, a sliding panel for information about the project and a list of topics, and a sliding panel for our response to that topic. There is a slideshow of 
+The client side is a submission browsing experience. There is simple navigation: Previous and Next arrows to change the current topic, a link to Higher Edge, a sliding panel for information about the project and a list of topics, and a sliding panel for our response to that topic. There is also an auto-playing slideshow of photos of real student submissions related to the current topic.
 
 #### Information Exchange
 
-
+On load, the topic template page (index.php) is either provided with a topic_id query in the address or it will randomly select one, and then it populates all content areas (topic title, category, topic cloud in the project information sliding panel, and all categorical data in the information sliding panel) from the database. The first (placeholder) image in the slideshow is also populated with PHP directly from the img/uploads/ folder. Then, once the page has loaded, an AJAX call is placed to retrieve the other images and once they are loaded, the slideshow begins.
 
 #### Server-Side Operations
 
