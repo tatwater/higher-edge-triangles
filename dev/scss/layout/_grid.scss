@@ -21,8 +21,11 @@ body {
   transform: translate(-50%, -50%);
   width: 100%;
   
-  &.center {
-    text-align: center;
+  &.admin {
+    position: relative;
+      top: 0;
+      left: 0;
+    transform: none;
   }
 }
 td, th {

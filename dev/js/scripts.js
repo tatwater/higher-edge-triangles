@@ -14,6 +14,16 @@ $(document).ready(function() {
     $(this).toggleClass("active");
   });
   
+  // toggle admin forms
+  toggleForms();
+  $(".form-switch button").each(function() {
+    $(this).on("click", function() {
+      $(this).siblings("button").removeClass("active");
+      $(this).addClass("active");
+      toggleForms();
+    });
+  });
+  
   // AJAX to retrieve list of gallery image names
   $.get("includes/get-images.php?topic_id=" + topicID, function(imageList) {
     imageList = imageList.split(",");
@@ -56,4 +66,10 @@ function imagesLoaded() {
   setTimeout(function() {
     $(".gallery").slick('slickNext');
   }, 5000);
+}
+
+function toggleForms() {
+  $("form").hide();
+  var activeForm = $(".form-switch .active").data("toggle");
+  $("form[data-name='" + activeForm + "']").show();
 }

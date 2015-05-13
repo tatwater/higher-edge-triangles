@@ -20,7 +20,9 @@ On load, the topic template page (`index.php`) is either provided with a topic_i
 
 #### Server-Side Operations
 
-The user interface to manage server side operations is the administration panel (`admin.php`). It consists of two sections - form controls for managing the database and a database preview where tables are printed out for inspection. Until commented out upon release, adding `?drop` and `?create` to the address bar will modify the database. All other administrative functions use `POST` and are password-protected. The password is hashed and stored in a separate database table.
+The user interface to manage server side operations is the administration panel (`admin.php`). It consists form controls for managing the database. Until commented out upon release, adding `?drop` and `?create` to the address bar will modify the database. All other administrative functions use `POST` and are password-protected. The password is hashed and stored in a separate database table.
+
+The file `debug.php` is a database preview where tables are printed out for inspection of all 8 tables. This is for visualizing current database status without using phpmyadmin.
 
 With the form, a user can add new topics, upload as many photos of student submissions as necessary, and insert the new record into all 8 database tables. The user may also remove a topic, which will delete all records related to that topic from all 8 tables as well as delete all uploaded images related to that topic from `img/uploads/`.
 
@@ -51,6 +53,14 @@ With the form, a user can add new topics, upload as many photos of student submi
     <td>X</td>
     <td>X</td>
   </tr>
+  <tr>
+    <td>Debug</td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td>X</td>
+    <td>X</td>
+  </tr>
 </table>
 
 #### Plugins
@@ -62,5 +72,7 @@ With the form, a user can add new topics, upload as many photos of student submi
 ## Setup
 
 Distribution files are found in `dist/`, which are all that are needed to host and run the site. All development files are found in `dev/`. This project uses **gulp.js** as a task runner to minify CSS and JavaScript as well as to perform other build tasks. More information at [http://gulpjs.com/](http://gulpjs.com/). Requires [Node](https://nodejs.org/), [Ruby](https://www.ruby-lang.org/en/), and [Sass](http://sass-lang.com/).
+
+To change MySQL settings credentials, see line 6 of `db-connect.php`.
 
 For testing, use images included in `test_images.zip`.
