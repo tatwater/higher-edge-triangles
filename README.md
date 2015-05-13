@@ -61,6 +61,6 @@ With the form, a user can add new topics, upload as many photos of student submi
 
 ## Setup
 
-Distribution files are found in `dist/`, which are all that are needed to host and run the site. All development files are found in `dev/`. This project uses **gulp.js** as a task runner to minify CSS and JavaScript as well as to perform other build tasks. More information at [http://gulpjs.com/](http://gulpjs.com/).
+Distribution files are found in `dist/`, which are all that are needed to host and run the site. All development files are found in `dev/`. This project uses **gulp.js** as a task runner to minify CSS and JavaScript as well as to perform other build tasks. More information at [http://gulpjs.com/](http://gulpjs.com/). Requires [Node](https://nodejs.org/), [Ruby](https://www.ruby-lang.org/en/), and [Sass](http://sass-lang.com/).
 
-For testing, use images included in test_images.zip.
+For testing, use images included in `test_images.zip`.

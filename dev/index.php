@@ -21,6 +21,9 @@
     echo "      <li></li>\n";
 ?>
     </ul>
+    <div style="background: rgba(0, 0, 0, .5); padding: 10px; position: absolute; top: 0; left: 0; z-index: 10;">
+      <p><?php echo $noticeText; ?></p>
+    </div>
     <div class="logo">
       <a href="http://higheredgect.org/"><img src="img/logo_light.png" /></a>
     </div>
