@@ -16,11 +16,13 @@ The client side is a submission browsing experience. There is simple navigation:
 
 #### Information Exchange
 
-On load, the topic template page (index.php) is either provided with a topic_id query in the address or it will randomly select one, and then it populates all content areas (topic title, category, topic cloud in the project information sliding panel, and all categorical data in the information sliding panel) from the database. The first (placeholder) image in the slideshow is also populated with PHP directly from the img/uploads/ folder. Then, once the page has loaded, an AJAX call is placed to retrieve the other images and once they are loaded, the slideshow begins.
+On load, the topic template page (`index.php`) is either provided with a topic_id query in the address or it will randomly select one, and then it populates all content areas (topic title, category, topic cloud in the project information sliding panel, and all categorical data in the information sliding panel) from the database. The first (placeholder) image in the slideshow is also populated with PHP directly from the `img/uploads/` folder. Then, once the page has loaded, an AJAX call is placed to retrieve the other images and once they are loaded, the slideshow begins.
 
 #### Server-Side Operations
 
+The user interface to manage server side operations is the administration panel (`admin.php`). It consists of two sections - form controls for managing the database and a database preview where tables are printed out for inspection. Until commented out upon release, adding `?drop` and `?create` to the address bar will modify the database. All other administrative functions use `POST` and are password-protected. The password is hashed and stored in a separate database table.
 
+With the form, a user can add new topics, upload as many photos of student submissions as necessary, and insert the new record into all 8 database tables. The user may also remove a topic, which will delete all records related to that topic from all 8 tables as well as delete all uploaded images related to that topic from `img/uploads/`.
 
 #### Page Technology Breakdown
 
