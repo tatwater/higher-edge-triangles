@@ -58,7 +58,27 @@
     }
   }
   
+  .toggle-zone {
+    background: none;
+    border: none;
+    color: #fafafa;
+    font-size: 100px;
+    outline: none;
+    position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+    transition: left .2s ease .2, color .2s ease .2s;
+    width: 5.26%;
+  }
+  
   &.active {
-   left: 5%;
+    left: 5%;
+    
+    .toggle-zone {
+      color: rgba(255, 255, 255, 0);
+      left: -5.26%;
+      transition: color .2s ease 0s;
+    }
   }
 }

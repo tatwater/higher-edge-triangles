@@ -10,8 +10,8 @@ $(document).ready(function() {
   });
   
   // toggle info panel
-  $(".info").on("click", function() {
-    $(this).toggleClass("active");
+  $("[data-toggle='info']").on("click", function() {
+    $(".info").toggleClass("active");
   });
   
   // toggle admin forms
@@ -26,6 +26,25 @@ $(document).ready(function() {
   
   $("[data-hide='noticeText']").on("click", function() {
     $(".form-switch div").hide();
+  });
+  
+  $("[name='category']").on("change", function() {
+    console.log("HERE");
+    switch ($(this).val()) {
+      case "":
+        $("[type='file']").removeClass("blue orange pink");
+        break;
+      case "My dream is":
+        $("[type='file']").attr("class", "blue");
+        break;
+      case "My favorite class is":
+        $("[type='file']").attr("class", "orange");
+        break;
+      case "My hobbies are":
+        $("[type='file']").attr("class", "pink");
+        break;
+      default:
+    }
   });
   
   // AJAX to retrieve list of gallery image names

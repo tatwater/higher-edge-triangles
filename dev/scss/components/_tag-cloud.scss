@@ -30,21 +30,21 @@
     }
     
     &[data-color="My dream is"] {
-      background: $orange;
-      
-      &:hover {
-        background: $orange-light;
-      }
-    }
-    &[data-color="My favorite class is"] {
-      background: $blue;
+      color: $blue;
       
       &:hover {
         background: $blue-light;
       }
     }
+    &[data-color="My favorite class is"] {
+      color: $orange;
+      
+      &:hover {
+        background: $orange-light;
+      }
+    }
     &[data-color="My hobbies are"] {
-      background: $pink;
+      color: $pink;
       
       &:hover {
         background: $pink-light;

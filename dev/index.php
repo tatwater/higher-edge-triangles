@@ -14,6 +14,7 @@
   </head>
   <?php include "includes/load-data.php"; ?>
   <body data-topic-id="<?php echo $topicID; ?>">
+    <p><?php echo $noticeText; ?></p>
     <ul class="triangle-corner">
 <?php
   // Print list of <li>s for traingles, 23|18 with|without white
@@ -34,7 +35,7 @@
             <p><?php echo $topicData["numDuplicates"] . " student";
                      if ($topicData["numDuplicates"] != 1)
                        echo "s"; ?></p>
-            <p><?php echo $noticeText; ?></p>
+            <button data-toggle="info">Put this into action &raquo;</button>
             <a href="?topic_id=<?php echo $nextTopicID; ?>"><span class="arrow down"></span></a>
           </div>
         </div>
@@ -46,7 +47,8 @@
       </div>
     </section>
     <section class="info">
-      <button class="close">X</button>
+      <button class="toggle-zone" data-toggle="info">&lsaquo;</button>
+      <button class="close" data-toggle="info">X</button>
       <div class="content">
         <p class="subhead"><?php echo $topicData["category"]; ?></p>
         <h1><?php echo $topicData["title"]; ?></h1>

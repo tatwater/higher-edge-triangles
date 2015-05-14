@@ -121,9 +121,31 @@ form {
           background: $purple-light;
         }
       }
+      
+      &.blue::-webkit-file-upload-button {
+        background: $blue;
+        
+        &:hover {
+          background: $blue-light;
+        }
+      }
+      &.orange::-webkit-file-upload-button {
+        background: $orange;
+        
+        &:hover {
+          background: $orange-light;
+        }
+      }
+      &.pink::-webkit-file-upload-button {
+        background: $pink;
+        
+        &:hover {
+          background: $pink-light;
+        }
+      }
     }
     [type="submit"] {
-      background: $purple;
+      background: $green;
       border: none;
       color: #fafafa;
       cursor: pointer;
@@ -133,7 +155,7 @@ form {
       transition: background .2s ease;
       
       &:hover {
-        background: $purple-light;
+        background: $green-light;
       }
     }
     
