@@ -91,7 +91,7 @@
         <div class="row two">
           <div class="col">
             <h2>Project Polygon</h2>
-            <p>Project description paragraph here, stating purpose and connection to Conn. Project description paragraph here, stating purpose and connection to Conn. Project description paragraph here, stating purpose and connection to Conn.</p>
+            <p>A web response platform dedicated to connecting, passions, dreams, and pastimes to careers through college education. Part of an interactive installation in New London High School in New London, CT orchestrated by students at Connecticut College.</p>
             <a class="button" href="http://designpublicpractice.org/">Learn More &raquo;</a>
           </div>
           <div class="col">

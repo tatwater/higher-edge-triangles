@@ -1,13 +1,7 @@
 <?php
+  include "db-connect.php";
+  
   $topicID = $_GET["topic_id"];
-  
-  // Set up connection to MySQL
-  $db_connection = mysql_connect("localhost", "root", "", false, 128);
-  if (!$db_connection)
-    die("Unable to connect: " . mysql_error());
-  
-  // Connect to project database
-  mysql_select_db("project_polygon", $db_connection);
   
   // Make an array of all image names for the current topic
   $imageList = array();

@@ -24,6 +24,10 @@ $(document).ready(function() {
     });
   });
   
+  $("[data-hide='noticeText']").on("click", function() {
+    $(".form-switch div").hide();
+  });
+  
   // AJAX to retrieve list of gallery image names
   $.get("includes/get-images.php?topic_id=" + topicID, function(imageList) {
     imageList = imageList.split(",");

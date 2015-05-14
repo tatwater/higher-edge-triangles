@@ -21,6 +21,7 @@
         <button <?php if (isset($_POST["delete"])) { echo 'class="active"'; } ?> data-toggle="delete" type="button">Delete <span>Existing Record</span></button>
 <?php if ($noticeText != "") {
           echo "        <div>" .
+               "          <button data-hide='noticeText'>X</button>" .
                "          <p>" . $noticeText . "</p>" .
                "        </div>";
       }
@@ -189,7 +190,6 @@
           </div>
         </div>
       </form>
-      <?php include "includes/db-debug.php"; ?>
     </div>
   </body>
   <?php mysql_close($db_connection); ?>
