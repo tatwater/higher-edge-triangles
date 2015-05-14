@@ -43,12 +43,12 @@ With the form, a user can add new topics, upload as many photos of student submi
     <td>X</td>
     <td>X</td>
     <td>X</td>
-    <td>X</td>
+    <td></td>
   </tr>
   <tr>
     <td>Admin</td>
     <td>X</td>
-    <td></td>
+    <td>X</td>
     <td></td>
     <td>X</td>
     <td>X</td>
